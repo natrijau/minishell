@@ -1,0 +1,88 @@
+1ere ETAPE : LEXER
+2eme ETAPE : PARSING
+3eme ETAPE : EXECVE
+
+
+------------------LEXER---------------------
+
+Comprendre l’analyse lexicale :
+	L’analyse lexicale est la première étape du processus de compilation.
+	Le rôle du lexer est de diviser le code en tokens, les unités de base du langage.
+	Les tokens incluent des mots-clés, des identifiants, des opérateurs, des littéraux et des ponctuations.
+Implémenter un lexer simple :
+	Vous pouvez utiliser un enum pour gérer les états du lexer.
+	Utilisez une boucle pour parcourir la chaîne d’entrée et déterminer le type de chaque token.
+	Utilisez des switch pour exécuter le code approprié pour chaque état.
+
+	 ---------------------------------
+	| exemple de struct:              |
+	|				  |
+	|	enum state {              |
+	|    		START,            |
+	|   		IDENTIFIER,       |
+	|    		OPERATOR,         |
+	|   		LITERAL,          |
+	|  		PUNCTUATION,      |
+	| 		END		  |
+	|	};			  |
+	 --------------------------------- 
+	 
+
+-------------------PARSING-----------------------
+
+
+
+
+
+
+
+
+1 -> Afficher une invite avant une nouvelle commande
+
+2 -> Avoir un historique
+
+3 -> Rechercher et lancer le bon executable (en fonction de la variable PATH ou à l'aide d'un
+chemin relatif ou absolu)
+
+
+ --------- Ce qu'on ne doit pas gerer ---------
+
+- Ne pas interpréter les guillemets non fermés ou les caractères spéciaux qui ne sont pas requis par le sujet tel que \ (barre oblique inverse) ou ; (point­virgule)
+
+
+----------- A gerer ---------
+
+- ' (guillemet simple) qui devrait empêcher le shell d'interpréter la méta­
+caractères dans la séquence citée. Placer des caractères entre guillemets simples (''') préserve la valeur littérale de chaque caractère entre guillemets. Un guillemet simple ne peut pas apparaître entre des guillemets simples, même s'il est précédé d'une barre oblique inverse.
+
+- " (guillemet double) qui devrait empêcher le shell d'interpréter les méta­caractères dans la
+séquence citée à l'exception de $ (signe dollar)
+
+- Implémenter des redirections :
+◦ < devrait rediriger l'entrée.
+◦ > devrait rediriger la sortie.
+◦ << doit recevoir un délimiteur, puis lire l'entrée jusqu'à ce qu'une ligne contenant le délimiteur
+apparaisse. Cependant, il n’est pas nécessaire de mettre à jour l’historique !
+◦ >> devrait rediriger la sortie en mode ajout.
+
+- Implémenter des tuyaux (caractère |). La sortie de chaque commande dans le pipeline est
+connecté à l’entrée de la commande suivante via un tuyau.
+
+- Gérer les variables d'environnement ($ suivi d'une séquence de caractères) qui
+devraient s’étendre à leurs valeurs.
+
+- Gérer $? qui devrait s'étendre au statut de sortie du pipeline de premier plan exécuté le plus récemment.(exit status)
+
+- Gérez ctrl­C, ctrl­D et ctrl­\ qui doivent se comporter comme dans bash.
+◦ ctrl­C affiche une nouvelle invite sur une nouvelle ligne.
+◦ ctrl­D quitte le shell.
+◦ ctrl­\ ne fait rien.
+
+- Votre shell doit implémenter les éléments intégrés suivants :
+◦ écho avec l'option ­n
+◦ cd avec seulement un chemin relatif ou absolu
+◦ mot de passe sans options
+◦ exporter sans options
+◦ désarmé sans options
+◦ env sans options ni arguments
+◦ quitter sans options

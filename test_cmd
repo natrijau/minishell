@@ -1,0 +1,7 @@
+echo 'salut les amis'                     -> print: salut les amis 
+echo 'salut les' 'amis'                   -> print: salut les amis 
+echo 'salut les''amis'                    -> print: salut lesamis 
+echo 'salut les'                  'amis'  -> print: salut les amis 
+echo 'salut les' amis'                    -> erreur nbr quote
+
+
