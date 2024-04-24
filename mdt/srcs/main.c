@@ -1,11 +1,11 @@
 #include "./main.h"
 
-void    parsing_cmd(t_data *data)
-{
-    //tokeniser chaque node de t_list_cmd
-    // stocker dans t_list_split_cmd
-    //----> t_lexer
-}
+// void    parsing_cmd(t_data *data)
+// {
+//     //tokeniser chaque node de t_list_cmd
+//     // stocker dans t_list_split_cmd
+//     //----> t_lexer
+// }
 
 // void    lexer(char *entry, t_data *data)
 // {
@@ -39,7 +39,7 @@ int display_prompt(t_data *data)
     {
         entry = readline("Minishell>");
         add_history(entry);
-        lexer(entry, data);
+ //       lexer(entry, data);
         printf("test %s\n",entry);
         // if ((ft_strcmp(entry),"exit") == 0)
         // {
@@ -58,6 +58,7 @@ int main(int ac, char **av, char **envp)
 
     init_data(envp, &data);
     display_prompt(&data);
+    (void) av;
     (void) ac;
     (void) envp;
  //   lexer(av);

@@ -6,7 +6,7 @@
 #    By: sylabbe <sylabbe@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/29 11:39:02 by sylabbe           #+#    #+#              #
-#    Updated: 2024/04/24 15:28:04 by sylabbe          ###   ########.fr        #
+#    Updated: 2024/04/24 17:31:00 by sylabbe          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ DEST_MDT_DIR = mdt/obj
 
 # Ajouter le chemin au début de chaque fichier source
 SRC =	$(addprefix $(SRC_MDT_DIR)/, main.c \
-									ft_lst.c \)
+									ft_lst.c)
 
 
 # Générer les noms d'objets en remplaçant l'extension .c par .o dans le répertoire obj
@@ -41,7 +41,7 @@ bonus: $(NAME_BONUS)
 $(NAME): $(OBJECTS)
 	@${MAKE} -C ./Libft
 	@echo "\033[0;32mLIBFT COMPILED\033[0m"
-	@${CC} ${CFLAGS} $(OBJECTS) ./Libft/libft.a -o $(NAME)
+	@${CC} ${CFLAGS} $(OBJECTS) ./Libft/libft.a -o $(NAME) -lreadline
 	@echo "\033[0;32mMANDATORY COMPILED\033[0m"
 
 
