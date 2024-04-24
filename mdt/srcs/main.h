@@ -18,7 +18,7 @@
 #include <curses.h>
 #include <term.h>
 #include <stdio.h>
-
+#include "../../Libft/libft.h"
 //structure tokens
 typedef enum lexer{
     WORD,
@@ -59,6 +59,7 @@ typedef struct s_env
 typedef struct s_data
 {
     char        **envp;
+    char        *entry;
     t_env       *env;
     t_list_cmd  *cmd;
 }   t_data;
