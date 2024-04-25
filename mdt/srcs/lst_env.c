@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_cmd.c                                       :+:      :+:    :+:   */
+/*   lst_env.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sylabbe <sylabbe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 15:31:13 by sylabbe           #+#    #+#             */
-/*   Updated: 2024/04/24 15:34:17 by sylabbe          ###   ########.fr       */
+/*   Created: 2024/04/25 12:29:54 by sylabbe           #+#    #+#             */
+/*   Updated: 2024/04/25 13:33:53 by sylabbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.h"
+#include "main.c"
 
-t_list_cmd	*ft_lstnew_cmd(t_alloc *lst_alloc)
+t_env	*ft_lstnew_env(t_env *lst_env)
 {
-	t_list_cmd	*node;
-
-	node = malloc(sizeof(t_list_cmd));
-	if (add_alloc((&lst_alloc), node, NULL))
-		return (NULL);
-	node->cmd = NULL;
-//	node->path = NULL;
-	node->next = NULL;
+	t_env	*node;
+	(void)lst_env;
+	node = malloc(sizeof(t_env));
+//	if (add_alloc((&lst_alloc), node, NULL))
+//		return (NULL);
+	node->var = NULL;
+	node->value = NULL;
+	node->origin = 0;
 	return (node);
 }
 
-void	ft_lstadd_back_cmd(t_list_cmd **lst, t_list_cmd *new)
+void	ft_lstadd_back_env(t_env **lst, t_env *new)
 {
-	t_list_cmd	*beacon;
+	t_env	*beacon;
 
 	if (lst == NULL || new == NULL)
 		return ;
-	beacon = ft_lstlast_list_cmd(*lst);
+	beacon = ft_lstlast_env(*lst);
 	beacon->next = new;
 }
 
-t_list_cmd	*ft_lstlast_list_cmd(t_list_cmd *lst)
+t_env	*ft_lstlast_env(t_env *lst)
 {
-	t_list_cmd	*beacon;
+	t_env	*beacon;
 
 	if (lst == NULL)
 		return (NULL);
@@ -51,10 +51,10 @@ t_list_cmd	*ft_lstlast_list_cmd(t_list_cmd *lst)
 	return (beacon);
 }
 
-int	ft_lstsize_c(t_list_cmd *lst)
+int	ft_lstsize_env(t_env *lst)
 {
 	int		i;
-	t_list_cmd	*beacon;
+	t_env	*beacon;
 
 	i = 1;
 	if (lst == NULL)

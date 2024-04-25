@@ -6,7 +6,7 @@
 /*   By: sylabbe <sylabbe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 09:37:19 by sylabbe           #+#    #+#             */
-/*   Updated: 2024/04/03 18:19:13 by sylabbe          ###   ########.fr       */
+/*   Updated: 2024/04/25 13:20:58 by sylabbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char	*ft_strjoin_f(char *s1, char *s2);
 char	*ft_strjoin_a(t_alloc **lst_alloc, char const *s1, char const *s2);
 char	**ft_split_a(t_alloc **lst_alloc, char const *s, char c);
 char	*ft_strdup_a(t_alloc **lst_alloc, const char *source);
-int		ft_tablen(char **tab);
+int		ft_tablen(char **str);
 //ALLOC
 int		add_alloc(t_alloc **lst_alloc, void *alloc, void **ptr_alloc);
 int		add_s_alloc(t_alloc **lst_alloc, void *alloc);

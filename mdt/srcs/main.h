@@ -18,6 +18,7 @@
 #include <curses.h>
 #include <term.h>
 #include <stdio.h>
+#include "../../Libft/libft.h"
 
 //structure tokens
 typedef enum lexer{
@@ -51,6 +52,8 @@ typedef struct s_list_cmd
 typedef struct s_env
 {
     char *var;
+    char *value;
+    int origin;
     struct s_env *next;
 }   t_env;
 
@@ -62,3 +65,15 @@ typedef struct s_data
     t_env       *env;
     t_list_cmd  *cmd;
 }   t_data;
+
+
+//ENV
+int get_env(t_data *data, char **envp);
+int	add_env_node(t_data *data);
+int	found_equal(const char *string, int searchedChar);
+
+//LST ENV
+t_env	*ft_lstnew_env(t_env *lst_env);
+void	ft_lstadd_back_env(t_env **lst, t_env *new);
+t_env	*ft_lstlast_env(t_env *lst);
+int	ft_lstsize_env(t_env *lst);

@@ -6,7 +6,7 @@
 #    By: sylabbe <sylabbe@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/29 11:39:02 by sylabbe           #+#    #+#              #
-#    Updated: 2024/04/24 17:31:00 by sylabbe          ###   ########.fr        #
+#    Updated: 2024/04/25 13:16:31 by sylabbe          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,9 @@ DEST_MDT_DIR = mdt/obj
 
 # Ajouter le chemin au début de chaque fichier source
 SRC =	$(addprefix $(SRC_MDT_DIR)/, main.c \
-									ft_lst.c)
+									ft_lst.c \
+									env.c \
+									lst_env.c)
 
 
 # Générer les noms d'objets en remplaçant l'extension .c par .o dans le répertoire obj
