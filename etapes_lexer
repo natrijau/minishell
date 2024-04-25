@@ -1,0 +1,6 @@
+1 - transformer les Dollars (voir exceptions)
+2 - split en fonction des pipes (attention au " ou ')
+3 - checker si | en 1ere caracter ou en dernier (renvoi une erreur)
+4 - split chaques mots (tokeniser)
+5 - enlever les quotes
+
