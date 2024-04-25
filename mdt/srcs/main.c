@@ -58,14 +58,9 @@ int main(int ac, char **av, char **envp)
 
     init_data(envp, &data);
     get_env(&data, envp);
+    print_env_debug(&data);
     display_prompt(&data);
-    while(data.env != NULL)
-    {
-        printf("Var = %s\n",data.env->var);
-        printf("Value = %s\n",data.env->value);
-        printf("Orihin = %d\n",data.env->origin);
-        data.env = data.env->next;
-    }
+
     (void) av;
     (void) ac;
     (void) envp;

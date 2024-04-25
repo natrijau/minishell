@@ -6,11 +6,11 @@
 /*   By: sylabbe <sylabbe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 12:29:54 by sylabbe           #+#    #+#             */
-/*   Updated: 2024/04/25 13:33:53 by sylabbe          ###   ########.fr       */
+/*   Updated: 2024/04/25 14:11:16 by sylabbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.c"
+#include "main.h"
 
 t_env	*ft_lstnew_env(t_env *lst_env)
 {

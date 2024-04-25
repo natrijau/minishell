@@ -6,7 +6,7 @@
 #    By: sylabbe <sylabbe@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/29 11:39:02 by sylabbe           #+#    #+#              #
-#    Updated: 2024/04/25 13:16:31 by sylabbe          ###   ########.fr        #
+#    Updated: 2024/04/25 14:16:52 by sylabbe          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ DEST_MDT_DIR = mdt/obj
 SRC =	$(addprefix $(SRC_MDT_DIR)/, main.c \
 									ft_lst.c \
 									env.c \
-									lst_env.c)
+									lst_env.c \
+									debug.c)
 
 
 # Générer les noms d'objets en remplaçant l'extension .c par .o dans le répertoire obj
@@ -38,7 +39,6 @@ RM = rm -f
 
 all: $(NAME)
 
-bonus: $(NAME_BONUS)
 
 $(NAME): $(OBJECTS)
 	@${MAKE} -C ./Libft

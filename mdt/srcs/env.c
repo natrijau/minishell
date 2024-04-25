@@ -6,7 +6,7 @@
 /*   By: sylabbe <sylabbe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 12:27:21 by sylabbe           #+#    #+#             */
-/*   Updated: 2024/04/25 13:33:51 by sylabbe          ###   ########.fr       */
+/*   Updated: 2024/04/25 14:26:33 by sylabbe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,22 @@ int get_env(t_data *data, char **envp)
 		add_env_node(data);
 		node = ft_lstlast_env(data->env);
 		node->var =ft_substr(envp[i], 0, found_equal(envp[i], '='));
-		node->value = ft_substr(envp[i], found_equal(envp[i], '='), ft_strlen(envp[i]));
+		node->value = ft_substr(envp[i], found_equal(envp[i], '=') + 1, ft_strlen(envp[i]));
 		node->origin = 1;
 		i++;
 	}
 	return (0);
 }
 
-// int sort_env()
+// int sort_env(t_data *data)
 // {
-	
+// 	t_env *node;
+
+// 	node = data->env;
+// 	while(node != NULL);
+// 	{
+// 		if ()
+// 	}
 // }
 
 // int add_var_env()

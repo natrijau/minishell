@@ -77,3 +77,6 @@ t_env	*ft_lstnew_env(t_env *lst_env);
 void	ft_lstadd_back_env(t_env **lst, t_env *new);
 t_env	*ft_lstlast_env(t_env *lst);
 int	ft_lstsize_env(t_env *lst);
+
+//DEBUG(A EFFACER)
+void	print_env_debug(t_data *data);
